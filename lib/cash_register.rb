@@ -38,10 +38,12 @@ class CashRegister
       @items.pop
       @prices.pop
     end
-    if @items[-1] == last_item
-      @total = @total - @prices[-1]
-      @items.pop
-      @prices.pop
+    @items.length do
+      if @items[-1] == last_item
+        @total = @total - @prices[-1]
+        @items.pop
+        @prices.pop
+      end
     end
   end
   
